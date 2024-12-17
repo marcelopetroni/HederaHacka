@@ -1,6 +1,9 @@
+#root, html, body
+  background-color: #fff
+  
 .sidebar
-  width: 250px
-  height: 100vh
+  width: 20%
+  bottom: 0
   background-color: #6F2DA8
   display: flex
   flex-direction: column
@@ -27,12 +30,11 @@
       li
         margin: 1rem 0
 
-        .menu-link  // a classe que demos no JSX
+        .menu-link
           font-size: 1.2rem
           font-weight: 100
           display: flex
           align-items: center
-          width: 100%       // Para hover cobrir toda a horizontal
           color: #fff
           text-decoration: none
           padding: 0.3rem
@@ -52,7 +54,7 @@
             // Pode mudar a cor do texto, se quiser
 
   &__logout
-    margin-top: 10rem
+    margin-top: 40rem
     .menu-link
       font-size: 1.5rem
       display: flex

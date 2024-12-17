@@ -20,7 +20,7 @@ const Sidebar = () => {
       <nav className="sidebar__menu">
         <ul>
           <li>
-            <NavLink to="/overview" className="menu-link">
+            <NavLink to="/home" className="menu-link">
               <img src={HomeIcon} alt='HomeIcon' className='icon' />
               Home
             </NavLink>
