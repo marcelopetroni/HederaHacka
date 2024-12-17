@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import './LandingPage.styles.sass'
+import SkillSphere from "../../assets/SKILLSPHERE.png";
+import Sphere from "../../assets/SPHERE.png";
+import PeopleTalking from "../../assets/people_talking.png";
 
 const LandingPage = () => {
 const [isLogin, setIsLogin] = useState(true)
@@ -8,15 +11,16 @@ return (
 	<div className="landing-page">
 	<section className="section-one">
 		<div className="content-left">
-		<div className="icon">
-			{/* I will put icons here */}
-		</div>
-		<h1>The Ultimate Global Platform for Competitions and Challenges</h1>
-		<p>Host, join and manage competitions all in one place</p>
-		<button className="explore-button">Explore Events</button>
+			<div className="icon">
+				<img src={Sphere} alt="Profile" className="landing-image" />
+				<img src={SkillSphere} alt="Profile" className="landing-image2" />
+			</div>
+			<h1>The Ultimate Global Platform for Competitions and Challenges</h1>
+			<p>Host, join and manage competitions all in one place</p>
+			<button className="explore-button">Explore Events</button>
 		</div>
 		<div className="image-right">
-		<img src="path_to_your_image.png" alt="Landing Image" />
+			<img src={PeopleTalking} alt="Profile" className="landing-image3" />
 		</div>
 	</section>
 
