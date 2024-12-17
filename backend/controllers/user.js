@@ -9,7 +9,6 @@
 	}
 
 	async create(req, res) {
-		console.log(req.body);
 		const { firstName, lastName, email, password } = req.body;
 
 		try {
@@ -51,8 +50,6 @@
 	}
 
 	async update(req, res) {
-		console.log(req.body, "req.body");
-
 		const { id } = req.query;
 
 		try {
