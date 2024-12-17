@@ -11,9 +11,9 @@ export default class userRoutes {
 	}
 
 	setup() {
-		this.router.post('/', this.SchemaValidator.validate(UserSchema.create), this.UserController.create);
-		this.router.get('/:id/exists', this.SchemaValidator.validate(UserSchema.exists), this.UserController.exists);
-		this.router.put('/:id', this.SchemaValidator.validate(UserSchema.update), this.UserController.update);
+		this.router.get('/', this.SchemaValidator.validate(UserSchema.exists), this.UserController.exists);
+		this.router.post('/create-user', this.SchemaValidator.validate(UserSchema.create), this.UserController.create);
+		this.router.put('/update-user', this.SchemaValidator.validate(UserSchema.update), this.UserController.update);
 
 		return this.router;
 	}

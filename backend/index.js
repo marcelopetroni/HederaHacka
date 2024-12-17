@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 const userRoute = new UserRoutes();
-app.use('/api/users', userRoute.setup());
+app.use('/users', userRoute.setup());
 
 sequelize.authenticate()
   .then(() => {

@@ -1,59 +1,83 @@
-import { UserService } from '../services/index.js';
+	import { UserService } from '../services/index.js';
 
-class UserController {
+	class UserController {
 	constructor() {
 		this.userService = new UserService();
+		this.create = this.create.bind(this);
+		this.exists = this.exists.bind(this);
+		this.update = this.update.bind(this);
 	}
 
 	async create(req, res) {
+		console.log(req.body);
+		const { firstName, lastName, email, password } = req.body;
+
 		try {
 		const user = await this.userService.create({
-			...req.data
+			firstName,
+			lastName,
+			email,
+			password,
 		});
 
-		this.sendSuccess({
+		res.status(201).json({
+			success: true,
 			data: user,
-			res
 		});
 		} catch (error) {
-			this.sendError({ error, req, res });
+		res.status(500).json({
+			success: false,
+			error: error.message || 'An unexpected error occurred',
+		});
 		}
 	}
 
 	async exists(req, res) {
 		try {
 		const response = await this.userService.exists({
-			email: req.filter.email
+			email: req.body.email,
 		});
 
-		this.sendSuccess({
+		res.status(200).json({
+			success: true,
 			data: response,
-			res
 		});
 		} catch (error) {
-			this.sendError({ error, req, res });
+		res.status(500).json({
+			success: false,
+			error: error.message || 'An unexpected error occurred',
+		});
 		}
 	}
 
 	async update(req, res) {
+		console.log(req.body, "req.body");
+
+		const { id } = req.query;
+
 		try {
-		const options = {
-			filter: {
-			id: req.filter.id
-			},
-			changes: req.data
-		};
+			const options = {
+				filter: {
+					id: id,
+				},
+				changes: req.body,
+			};
 
-		const response = await this.userService.update(options);
+			const response = await this.userService.update(options);
 
-		this.sendSuccess({
-			data: response,
-			res
-		});
+			res.status(200).json({
+				success: true,
+				data: response,
+			});
+
 		} catch (error) {
-			this.sendError(error, req, res);
+			res.status(500).json({
+				success: false,
+				error: error.message || 'An unexpected error occurred',
+			});
 		}
 	}
-}
 
-export default UserController;
+	}
+
+	export default UserController;

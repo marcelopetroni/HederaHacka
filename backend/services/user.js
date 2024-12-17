@@ -4,13 +4,14 @@ const { User } = db;
 class UserService {
 	async create(data) {
 		const transaction = await User.sequelize.transaction();
+
 		try {
-		const userCreated = await User.create(data, { transaction });
+			const userCreated = await User.create(data, { transaction });
+			const user = userCreated.toJSON();
 
-		const user = userCreated.toJSON();
+			await transaction.commit();
+			return user;
 
-		await transaction.commit();
-		return user;
 		} catch (error) {
 			await transaction.rollback();
 			throw error;
@@ -19,35 +20,36 @@ class UserService {
 
 	async exists(data) {
 		const user = await User.findOne({
-		where: {
-			id: data.id,
-		},
-		attributes: ['id']
+			where: {
+				email: data.email,
+			},
+			attributes: ['id', 'email']
 		});
 
-		return !!user;
+		return user;
 	}
 
-	async update({ changes, filter }) {
+	async update({ filter, changes }) {
 		const user = await User.findOne({
-		where: {
-			id: filter.id
-		},
-		attributes: ['id']
+			where: {
+				id: filter.id
+			},
+			attributes: ['id']
 		});
 
-		if (!user) {
-			throw new Error('User not found');
-		}
+			if (!user) {
+				throw new Error('User not found');
+			}
 
 		const transaction = await User.sequelize.transaction();
 
 		try {
 		const promises = [
 			User.update(changes, {
-			where: {
-				id: filter.id
-			},
+				changes,
+				where: {
+					id: filter.id
+				},
 			transaction
 			})
 		];
