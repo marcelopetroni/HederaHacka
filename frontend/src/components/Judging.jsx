@@ -1,3 +1,9 @@
-export default function Judging() {
-    return <h1>Judging Page</h1>;
-  }
+import React from "react";
+
+const Judging = () => {
+  return (
+    <img src="../images/Oops.png" />
+  )
+} 
+
+export default Judging;
