@@ -1,0 +1,77 @@
+.sidebar
+  width: 250px
+  height: 100vh
+  background-color: #6F2DA8
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 1rem
+  color: #fff
+  font-family: sans-serif
+  border-top-right-radius: 60px
+  border-bottom-right-radius: 60px
+
+  &__logo
+    margin-top: 1rem
+    margin-bottom: 2rem
+
+    img
+      width: 170px
+  
+  &__menu
+    width: 100%
+    ul
+      list-style: none
+      padding: 0
+
+      li
+        margin: 1rem 0
+
+        .menu-link  // a classe que demos no JSX
+          font-size: 1.2rem
+          font-weight: 100
+          display: flex
+          align-items: center
+          width: 100%       // Para hover cobrir toda a horizontal
+          color: #fff
+          text-decoration: none
+          padding: 0.3rem
+          transition: background-color 0.3s ease
+
+          .icon
+            margin-right: 0.8rem
+
+          &:hover
+            background-color: rgba(255, 255, 255, 0.1)
+            cursor: pointer
+
+          &.active
+            // quando a rota estiver ativa, aplica essas regras
+            font-weight: 800           // bold
+            background-color: rgba(255, 255, 255, 0.3) // destaque
+            // Pode mudar a cor do texto, se quiser
+
+  &__logout
+    margin-top: 10rem
+    .menu-link
+      font-size: 1.5rem
+      display: flex
+      align-items: center
+      width: 100%
+      color: #fff
+      text-decoration: none
+      padding: 0.5rem 1rem
+      transition: background-color 0.3s ease
+      font-weight: 100
+
+      .icon
+        margin-right: 0.8rem
+        font-size: 1.2rem
+
+      &:hover
+        background-color: rgba(255, 255, 255, 0.1)
+        cursor: pointer
+
+      &.active
+        font-weight: 700
+        background-color: rgba(255, 255, 255, 0.3)
