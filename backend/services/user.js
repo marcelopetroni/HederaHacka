@@ -18,15 +18,9 @@ class UserService {
 		}
 	}
 
-	async exists(data) {
-		const user = await User.findOne({
-			where: {
-				email: data.email,
-			},
-			attributes: ['id', 'email']
-		});
-
-		return user;
+	async getAllUsers() {
+		const users = await User.findAll();
+		return users;
 	}
 
 	async update({ filter, changes }) {

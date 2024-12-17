@@ -4,7 +4,7 @@
 	constructor() {
 		this.userService = new UserService();
 		this.create = this.create.bind(this);
-		this.exists = this.exists.bind(this);
+		this.getAllUsers = this.getAllUsers.bind(this);
 		this.update = this.update.bind(this);
 	}
 
@@ -31,15 +31,12 @@
 		}
 	}
 
-	async exists(req, res) {
+	async getAllUsers(req, res) {
 		try {
-		const response = await this.userService.exists({
-			email: req.body.email,
-		});
-
+		const users = await this.userService.getAllUsers();
 		res.status(200).json({
 			success: true,
-			data: response,
+			data: users,
 		});
 		} catch (error) {
 		res.status(500).json({

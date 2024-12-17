@@ -25,14 +25,6 @@ const UserSchema = {
 		}).noUnknown(),
 	},
 
-	exists: {
-		body: yup.object({
-			email: yup.string()
-			.test('invalidFormat', 'Invalid email format', value => isValidEmail(value))
-			.required('Email is required')
-		}).noUnknown(),
-	},
-
 	update: {
 		query: yup.object({
 			id: yup.number().min(1).required('User ID is required'),
