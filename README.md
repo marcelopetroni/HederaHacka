@@ -46,7 +46,7 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
   1. Go to our project website: [Project site](https://skill-sphere-ten.vercel.app/)
   2. Click in "Login in"
   3. Insert the fields:
-#### Example Sign-in Credentials
+#### Example Sign-in Credentials:
 ```bash
 Email: johndoe@example.com
 Password: password123
