@@ -43,7 +43,7 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
 - [Demo Video](colocar link aqui)
 
 ## How to acess our page ⬇️
-  1. Go to our project website: <a href="https://skill-sphere-ten.vercel.app/" target="_blank">Project site</a>
+  1. Go to our project website: [Project site](https://skill-sphere-ten.vercel.app/)
   2. Click in "Login in"
   3. Insert the fields:
 #### Example Sign-in Credentials:
