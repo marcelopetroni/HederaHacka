@@ -1,0 +1,76 @@
+.home-page
+  display: flex
+  flex-direction: row
+  font-family: sans-serif
+
+
+.home-page-container
+  display: flex
+  flex-direction: column
+  // min-height: 100vh
+  width: 100%
+  background-color: #fff  // cor de fundo de exemplo
+
+  .header-text-container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 60px
+    margin-top: 20px
+
+    .my-account-button
+      display: flex
+
+      .my-account-text
+        background: none
+        border: none
+        outline: none
+        font-size: 1rem
+        cursor: pointer
+        color: black
+        transition: background-color 0.3s ease
+      
+      .icon
+        width: 22px
+
+
+  .home-page-container-header
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 1.5rem
+    background-color: #fff
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1) 
+
+    h2
+      margin: 0
+      font-size: 1.8rem
+
+    .home-page-container-nav
+      display: flex
+      gap: 1rem
+
+      .tab-button
+        background: none
+        border: none
+        outline: none
+        padding: 0.5rem 1rem
+        font-size: 1rem
+        cursor: pointer
+        color: #666
+        transition: background-color 0.3s ease
+        border-radius: 8px
+
+        &:hover
+          background-color: rgba(111, 45, 168, 0.1)  // roxinho claro no hover
+          color: #333
+
+        &.active
+          font-weight: 700       // negrito
+          color: black
+          border-radius: 0
+          border-bottom: 1px solid
+
+  .home-page-container-content
+    flex: 1
+    padding: 2rem
