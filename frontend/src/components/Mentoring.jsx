@@ -2,7 +2,7 @@ import React from "react";
 
 const Mentoring = () => {
   return (
-    <img src="../images/Oops.png" />
+    <img style={{marginBottom: '15rem'}} src="../images/Oops.png" />
   )
 } 
 

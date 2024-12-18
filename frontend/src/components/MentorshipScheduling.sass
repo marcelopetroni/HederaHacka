@@ -1,0 +1,86 @@
+.mentorship-scheduling
+  margin-top: 1.5rem
+
+  h3
+    font-size: 1.8rem
+    font-weight: bold
+    margin-bottom: 4rem
+
+  .scheduled-mentors
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    
+
+  .available-mentors  
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    gap: 40px
+    margin-top: 4rem
+
+    .mentor-card-available
+      font-size: 1.8rem
+      background-color: #E4CFEE
+      justify-content: center
+      text-align: center
+      padding: 20px
+      border-radius: 20px
+      max-width: 300px // Limita a largura máxima do card
+      word-wrap: break-word // Quebra palavras longas
+      overflow-wrap: break-word // Alternativa para navegadores modernos
+
+      img
+        height: 120px
+        width: 120px
+
+
+  .mentor-card-container
+    display: flex
+    flex-direction: row
+    background-color: #E4CFEE
+    border-radius: 20px
+    padding: 1rem
+    text-align: center
+    flex: 1
+    gap: 15px
+    margin-right: 5rem
+    
+    img
+      height: 120px
+      width: 120px
+
+    .mentor-card
+      flex-direction: column
+      align-self: center
+
+    .mentor-card-text
+      margin: 0.5rem 0
+      font-size: 1.5rem
+
+      strong
+        color: #6F2DA8
+
+    .join-button
+      background-color: #6F2DA8
+      color: #fff
+      border: none
+      border-radius: 8px
+      padding: 0.5rem 1rem
+      cursor: pointer
+      transition: background-color 0.3s ease
+      margin-right: 8px
+
+    .join-button-2
+      background-color: #A4A4A5
+      color: #000
+      border: none
+      border-radius: 8px
+      padding: 0.5rem 1rem
+      cursor: pointer
+      transition: background-color 0.3s ease
+      margin-right: 5px
+
+      &:hover
+        background-color: #944fd7

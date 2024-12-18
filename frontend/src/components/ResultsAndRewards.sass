@@ -1,0 +1,53 @@
+.results-container
+  font-family: sans-serif
+  margin: 2rem
+  color: #000
+
+.results-title
+  font-size: 1.8rem
+  font-weight: bold
+  margin-bottom: 1.5rem
+
+.results-table
+  width: 100%
+  border-collapse: collapse
+
+  thead
+    tr
+      th
+        text-align: left
+        padding: 1rem
+        font-size: 1.5rem
+        color: #000
+        border-bottom: 1px solid #e0e0e0
+
+  tbody
+    tr
+      border-bottom: none
+
+      &:last-child
+        border-bottom: none
+
+      td
+        padding: 1rem
+        font-size: 1.5rem
+        color: #333
+
+      td:first-child
+        padding: 0
+        text-align: center
+
+        .rank-badge
+          width: 70px
+          height: 70px
+          background-color: #ccc
+          color: #fff
+          display: flex
+          align-items: center
+          justify-content: center
+
+          font-weight: bold
+          font-size: 1.8rem
+
+      &:hover
+        background-color: #f9f9f9
