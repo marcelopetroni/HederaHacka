@@ -14,17 +14,25 @@
 	display: flex
 	background-color: #333333
 	color: white
-	padding: 40px 100px
+	padding: 0px 100px
 	align-items: center
 	justify-content: space-between
 
 .landing-image
-	height: 60px
-	width: 60px
-
-.landing-image2
 	height: auto
-	width: 100px
+	width: 150px
+
+.landing-image3
+	height: auto
+	width: 250px
+
+.landing-image4
+	height: auto
+	width: 320px
+
+.landing-image5
+	height: auto
+	width: 500px
 
 .content-left
 	max-width: 500px
@@ -34,9 +42,11 @@
 	h1
 		font-size: 36px
 		font-weight: bold
+		margin-bottom: 5px
 	p
 		font-size: 18px
 		margin: 20px 0
+
 .explore-button
 	display: flex
 	align-items: center
@@ -58,14 +68,35 @@
 .section-two
 	height: 100vh
 	background-color: #F5F5F5
-	padding: 50px
+	padding: 30px
 	display: flex
 	justify-content: space-between
 	align-items: center
 	box-sizing: border-box
 	overflow: hidden
-	justify-content: center
 	position: relative
+	&::before
+		content: ""
+		position: absolute
+		top: 25px
+		left: 25px
+		right: 25px
+		bottom: 25px
+		border: 2px solid black
+		border-radius: 35px
+		pointer-events: none
+		z-index: 0
+
+.section-two-border
+	position: absolute
+	top: 15px
+	left: 15px
+	right: 15px
+	bottom: 15px
+	border: 2px solid black
+	border-radius: 15px
+	pointer-events: none
+	z-index: -1
 
 .section-two-content
 	display: flex
@@ -78,18 +109,21 @@
 .section-two-left
 	flex: 1
 	position: relative
+	margin: 30px 0px 0px 40px
 	h2
-		font-size: 48px
+		font-size: 60px
 		font-weight: bold
 		color: #333
-		margin-bottom: 20px
+		margin-bottom: 0px
 
-	p
+	.subtitle-section-two
 		font-size: 18px
 		color: #666
+		margin: 5px 0px 20px 0px
 
-.section-two-left-right
+.section-two-right
 	flex: 1
+	margin: 100px 120px 0px 0px
 	display: flex
 	flex-direction: column
 	align-items: center
@@ -102,6 +136,7 @@
 .form-toggle
 	display: flex
 	justify-content: space-between
+	font-family: 'Amiko', sans-serif
 	width: 100%
 	position: relative
 	border-bottom: 2px solid #ccc
@@ -109,6 +144,8 @@
 
 .toggle-btn
 	background-color: transparent
+	font-family: 'Amiko', sans-serif
+	font-weight: bold
 	border: none
 	color: #333
 	padding: 10px 0
@@ -130,18 +167,28 @@
 .form
 	display: flex
 	flex-direction: column
-	gap: 15px
+	gap: 20px
 	width: 320px
 	padding: 10px
 	box-sizing: border-box
 	overflow: visible
+	font-family: 'Amiko', sans-serif
 	transition: all 0.3s ease-in-out
-	input
-		padding: 10px
-		border: 1px solid #ccc
-		border-radius: 10px
-		background-color: #e9e9e9
-		font-size: 16px
+
+.form-input
+	padding: 12px
+	border: 0px solid #ccc
+	border-radius: 15px
+	background-color: rgba(222, 222, 222, 1)
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12)
+	font-size: 14px
+	&::placeholder
+		color: #9f9f9f
+		font-weight: 400
+	&:focus
+		border: 0px solid #9e3030
+		box-shadow: 0 4px 8px #801baf42
+		outline: none
 
 .terms-checkbox
 	display: flex
@@ -157,31 +204,39 @@
 	display: flex
 	align-items: center
 	justify-content: space-between
-	font-size: 14px
+	font-size: 13px
 	gap: 5px
 	color: #555
 	.chekbox-remember-me
 		display: flex
 		align-items: center
 		gap: 5px
-
-	label
-		margin-right: 20px
-
 	a
-		color: #800080
+		color: black
 		text-decoration: none
+		margin-left: 8px
+
+.checkbox
+	cursor: pointer
+	margin-bottom: 4px
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12)
 
 .form-button
-	width: 100%
-	background-color: #800080
+	width: 200px
+	height: auto
+	background-color: #7F1BAF
 	color: white
 	border: none
 	padding: 10px
-	font-size: 18px
+	font-size: 16px
 	cursor: pointer
-	border-radius: 5px
+	border-radius: 15px
 
+.button-container
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
 
 .section-three
 	height: 100vh
@@ -198,11 +253,31 @@
 
 .three-images
 	display: flex
+	align-items: center
 	justify-content: center
-	gap: 20px
+	margin-right: 90px
+	margin-bottom: 25px
+
+	span
+		font-size: 35px
+		font-weight: 400
+		width: 70%
+		color: white
+		margin-top: 15px
+		text-align: center
+	p
+		font-size: 16px
+		fontt-weight: 200
+		color: white
+		text-align: center
+		width: 70%
+		margin-top: 15px
+
 	img
-		max-width: 200px
-		height: auto
+		width: auto
+		height: 130px
+		object-fit: cover
+		margin-bottom: 10px
 
 .section-four
 	height: 100vh
@@ -211,21 +286,24 @@
 	align-items: center
 	padding: 40px 100px
 
-.content-left
-	width: 50%
-	h1
-		font-size: 36px
-		font-weight: bold
-
-.how-images
+.image-text
 	display: flex
-	gap: 20px
-	margin-top: 20px
+	flex-direction: column
+	align-items: center
+	text-align: center
+	color: white
+
+.content-left-four
+	width: 50%
+	margin-bottom: 50px
+	h1
+		font-size: 55px
+		font-weight: bold
 	img
-		max-width: 200px
+		width: 400px
 		height: auto
 
-.content-right
+.content-right-four
 	width: 50%
 	display: flex
 	flex-direction: column
@@ -233,7 +311,7 @@
 .text-block
 	margin-bottom: 20px
 	h3
-		font-size: 22px
+		font-size: 30px
 		margin-bottom: 10px
 	p
 		font-size: 16px
@@ -245,7 +323,7 @@
 
 .section-five
 	background-color: #F5F5F5
-	height: 35vh
+	height: 40vh
 	display: flex
 	align-items: center
 	justify-content: center
@@ -258,21 +336,30 @@
 		background-color: #333333
 		border: none
 
+.text-container-five
+	display: flex
+	flex-direction: column
+	span
+		font-weight: bold
+
 .section-five-content
 	display: flex
 	justify-content: space-between
 	align-items: center
-	width: 80%
+	width: 65%
 
 .testimonial-text
 	font-size: 24px
+	color: rgba(51, 51, 51, 1)
 	font-style: italic
-	max-width: 50%
+	max-width: 60%
 	text-align: left
 
 .testimonial-image img
 	max-height: 150px
+	margin-right: 60px
 	width: auto
+	border-radius: 50%
 
 .section-six
 	background-color: #333333
@@ -296,27 +383,32 @@
 		margin-bottom: 20px
 
 .get-started-button
-	background-color: #800080
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 16px
+	background-color: #7F1BAF
 	color: white
 	border: none
-	padding: 15px 30px
-	font-size: 18px
+	width: 150px
+	height: 50px
 	cursor: pointer
-	border-radius: 5px
+	font-size: 18px
+	margin-top: 25px
 
 .section-six-right
-	position: relative
 	width: 50%
 	img
 		max-width: 100%
 		height: auto
 
-.social-icons
-	position: absolute
-	bottom: 20px
-	right: 20px
+.icons
 	display: flex
-	gap: 15px
-	a
-		color: white
-		font-size: 20px
+	flex-direction: row
+
+.social-icons
+	width: 100%
+	height: 30px
+	display: flex
+	justify-content: end
+	cursor: pointer
