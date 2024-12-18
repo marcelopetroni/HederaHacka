@@ -23,12 +23,27 @@ const [formData, setFormData] = useState({
     confirmPassword: '',
 });
 
+const [loginForm, setLoginForm] = useState({
+    email: '',
+    password: ''
+});
+
 const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
         ...formData,
         [name]: value,
     });
+};
+
+const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+	
+    setLoginForm({
+        ...loginForm,
+        [name]: value,
+    });
+	console.log(loginForm, 'CHANGE');
 };
 
 const handleSubmit = async (event) => {
@@ -54,7 +69,28 @@ const handleSubmit = async (event) => {
     }
 };
 
+const handleLogin = async (event) => {
+	event.preventDefault();
 
+	try {
+		console.log(loginForm, 'HANDLELOGIN');
+
+		const response = await userService.getAllUsers();
+		const matchingUser = response.data.find(user =>
+            user.email === loginForm.email && user.password === loginForm.password
+        );
+
+        if (matchingUser) {
+            alert('Login successful');
+			// Here I will redirect to the menu later
+        } else {
+            alert('Invalid email or password');
+        }
+	} catch (error) {
+		alert('An error occurred during sign-in. Please try again.');
+		console.error('Error logging in', error);
+	}
+};
 
 return (
 	<div className="landing-page">
@@ -101,8 +137,22 @@ return (
 			<div className="form">
 			{isLogin ? (
 				<>
-				<input className="form-input" type="email" placeholder="Email" />
-				<input className="form-input" type="password" placeholder="Password" />
+				<input
+					className="form-input"
+					type="email"
+					placeholder="Email"
+					name="email"
+					value={loginForm.email}
+					onChange={handleLoginChange}
+				/>
+				<input
+					className="form-input"
+					type="password"
+					placeholder="Password"
+					name="password"
+					value={loginForm.password}
+					onChange={handleLoginChange}
+				/>
 				<div className="remember-me">
 					<div className="chekbox-remember-me">
 						<input type="checkbox" id="remember-me" className='checkbox'/>
@@ -111,7 +161,7 @@ return (
 					<a href="#forgot-password">Forgot the password?</a>
 				</div>
 				<div className="button-container">
-					<button className="form-button">Log In</button>
+					<button className="form-button" onClick={handleLogin}>Log In</button>
 				</div>
 				</>
 			) : (

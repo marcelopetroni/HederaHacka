@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://hederahacka-production.up.railway.app';
+const API_URL = 'https://skillsphere-production.up.railway.app';
 
 export const userService = {
 	getAllUsers: async () => {
@@ -15,7 +15,7 @@ export const userService = {
 
 	login: async () => {
 		try {
-			const response = await axios.post(`${API_URL}/login`);
+			const response = await axios.post(`${API_URL}/users/login`);
 			return response.data;
 		} catch (error) {
 			console.error('Error fetching users:', error);
