@@ -27,7 +27,7 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
 ![Hedera Hashgraph](https://img.shields.io/badge/Hedera%20Hashgraph-2C3454?style=for-the-badge&logo=hedera&logoColor=white)
 
 ## Project Demo Link 🔗
-- [Project site](colocar aqui)
+- [Project site](https://skill-sphere-ten.vercel.app/)
 
 ## Team 🏆
 
@@ -43,7 +43,7 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
 - [Demo Video](colocar link aqui)
 
 ## How to acess our page ⬇️
-  1. Go to our project website: [Project site](link aqui)
+  1. Go to our project website: [Project site](https://skill-sphere-ten.vercel.app/)
   2. Click in "Login"
   3. Insert the fields:
 #### Tyler: Talent Hunter (AJUSTAR)
@@ -54,6 +54,11 @@ Password: 123
 
 ## Try yourself 🏃
 ### Clone the repository
+
+```bash
+git clone https://github.com/marcelopetroni/SkillSphere.git
+```
+
 Write the following commands in the terminal to test the frontend:
 ```bash
 cd frontend
