@@ -39,6 +39,17 @@ const UserSchema = {
 			.test('invalidFormat', 'Invalid password format', value => isValidPassword(value)),
 		}).noUnknown(),
 	},
+	login: {
+		body: yup.object({
+			email: yup.string()
+			.test('invalidFormat', 'Invalid email format', value => isValidEmail(value))
+			.required('Email is required'),
+			password: yup.string()
+			.min(6, 'Password must be at least 6 characters')
+			.max(30, 'Password can be up to 30 characters')
+			.required('Password is required')
+		}).noUnknown(),
+	},
 };
 
 export default UserSchema;
