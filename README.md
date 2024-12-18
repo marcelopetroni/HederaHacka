@@ -48,7 +48,7 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
   3. Insert the fields:
 #### Example Sign-in Credentials:
 ```bash
-Email: johndoe@example.com
+Email: johndoe@hotmail.com
 Password: password123
 ```
 
