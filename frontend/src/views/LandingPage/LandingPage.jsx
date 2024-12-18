@@ -38,12 +38,11 @@ const handleChange = (event) => {
 
 const handleLoginChange = (event) => {
     const { name, value } = event.target;
-	
+
     setLoginForm({
         ...loginForm,
         [name]: value,
     });
-	console.log(loginForm, 'CHANGE');
 };
 
 const handleSubmit = async (event) => {
@@ -73,8 +72,6 @@ const handleLogin = async (event) => {
 	event.preventDefault();
 
 	try {
-		console.log(loginForm, 'HANDLELOGIN');
-
 		const response = await userService.getAllUsers();
 		const matchingUser = response.data.find(user =>
             user.email === loginForm.email && user.password === loginForm.password
