@@ -46,6 +46,31 @@
 		}
 	}
 
+	async login(req, res) {
+		const { email, password } = req.body;
+
+		try {
+			const user = await this.userService.login({ email, password });
+
+			if (!user) {
+				return res.status(401).json({
+				success: false,
+				message: 'Invalid email or password',
+				});
+			}
+
+			return res.status(200).json({
+				success: true,
+				message: 'Login successful'
+			});
+		} catch (error) {
+			res.status(500).json({
+				success: false,
+				error: error.message || 'An unexpected error occurred',
+			});
+		}
+	}
+
 	async update(req, res) {
 		const { id } = req.query;
 

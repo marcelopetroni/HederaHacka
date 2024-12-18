@@ -23,6 +23,16 @@ class UserService {
 		return users;
 	}
 
+	async login({ email, password }) {
+		const user = await UserModel.findOne({ email });
+
+		if (!user || user.password !== password) {
+		  return null;
+		}
+
+		return user;
+	}
+
 	async update({ filter, changes }) {
 		const user = await User.findOne({
 			where: {

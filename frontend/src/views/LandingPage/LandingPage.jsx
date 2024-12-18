@@ -11,9 +11,50 @@ import JohnDoe from "../../assets/johndoe.png";
 import Drawing from "../../assets/drawing.png";
 import Socials from "../../assets/socials.png";
 import HederaLogo from "../../assets/hedera-hashgraph-logo.png";
+import { userService } from '../../services/userService';
 
 const LandingPage = () => {
 const [isLogin, setIsLogin] = useState(true)
+const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+});
+
+const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+        ...formData,
+        [name]: value,
+    });
+};
+
+const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    try {
+        await userService.createUser({
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            password: formData.password
+        });
+
+        alert('User registered successfully!');
+    } catch (error) {
+        alert('An error occurred during sign-up. Please try again.');
+        console.error(error);
+    }
+};
+
+
 
 return (
 	<div className="landing-page">
@@ -75,17 +116,52 @@ return (
 				</>
 			) : (
 				<>
-				<input className="form-input" type="text" placeholder="First Name" />
-				<input className="form-input" type="text" placeholder="Last Name" />
-				<input className="form-input" type="email" placeholder="Email" />
-				<input className="form-input" type="password" placeholder="Password" />
-				<input className="form-input" type="password" placeholder="Confirm Password" />
+				<input
+					className="form-input"
+					type="text"
+					name="firstName"
+					placeholder="First Name"
+					value={formData.firstName}
+					onChange={handleChange}
+				/>
+				<input
+					className="form-input"
+					type="text"
+					name="lastName"
+					placeholder="Last Name"
+					value={formData.lastName}
+					onChange={handleChange}
+				/>
+				<input
+					className="form-input"
+					type="email"
+					name="email"
+					placeholder="Email"
+					value={formData.email}
+					onChange={handleChange}
+				/>
+				<input
+					className="form-input"
+					type="password"
+					name="password"
+					placeholder="Password"
+					value={formData.password}
+					onChange={handleChange}
+				/>
+				<input
+					className="form-input"
+					type="password"
+					name="confirmPassword"
+					placeholder="Confirm Password"
+					value={formData.confirmPassword}
+    				onChange={handleChange}
+				/>
 				<div className="terms-checkbox">
 					<input type="checkbox" id="terms" className='checkbox'/>
 					<label htmlFor="terms">I agree to the Terms of Service and Privacy Policy.</label>
 				</div>
 				<div className="button-container">
-					<button className="form-button">Sign In</button>
+					<button className="form-button" onClick={handleSubmit}>Sign In</button>
 				</div>
 				</>
 			)}
