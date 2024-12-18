@@ -44,9 +44,9 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
 
 ## How to acess our page ⬇️
   1. Go to our project website: [Project site](https://skill-sphere-ten.vercel.app/)
-  2. Click in "Login"
+  2. Click in "Login in"
   3. Insert the fields:
-#### Tyler: Talent Hunter (AJUSTAR)
+#### Example Sign-in Credentials
 ```bash
 Email: johndoe@example.com
 Password: password123
