@@ -24,7 +24,12 @@ class UserService {
 	}
 
 	async login({ email, password }) {
-		const user = await UserModel.findOne({ email });
+		const user = await User.findOne({
+			where: {
+				email: email,
+				password: password
+			}
+		});
 
 		if (!user || user.password !== password) {
 		  return null;
