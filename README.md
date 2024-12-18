@@ -48,8 +48,8 @@ Skill Shepere is a global, all-in-one platform for organizing, participating in,
   3. Insert the fields:
 #### Tyler: Talent Hunter (AJUSTAR)
 ```bash
-Email: tyler@hotmail.com
-Password: 123
+Email: johndoe@example.com
+Password: password123
 ```
 
 ## Try yourself 🏃
@@ -69,6 +69,6 @@ Write the following commands in the terminal to test the backend:
 ```bash
 cd backend
 npm install
-npm run start
+npm run dev
 ```
   
