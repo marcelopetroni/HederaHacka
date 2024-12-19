@@ -12,8 +12,10 @@ import Drawing from "../../assets/drawing.png";
 import Socials from "../../assets/socials.png";
 import HederaLogo from "../../assets/hedera-hashgraph-logo.png";
 import { userService } from '../../services/userService';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+const navigate = useNavigate();
 const [isLogin, setIsLogin] = useState(true)
 const [formData, setFormData] = useState({
     firstName: '',
@@ -79,7 +81,8 @@ const handleLogin = async (event) => {
 
         if (matchingUser) {
             alert('Login successful');
-			// Here I will redirect to the menu later
+			window.scrollTo(0, 0);
+            navigate('/home');
         } else {
             alert('Invalid email or password');
         }
