@@ -1,23 +1,26 @@
 import React from "react";
 import "./Certificates.styles.sass";
 import Sidebar from "../../components/Sidebar";
+import Certificate from "../../assets/certificate.png";
+import Certificate2 from "../../assets/certificate2.png";
+import Certificate3 from "../../assets/certificate3.png";
+import SearchIcon from '../../assets/SearchIcon.svg'
 
-// Lista de certificados (dados simulados)
 const certificates = [
   {
     id: 1,
     name: "Certificate of Participation",
-    image: "/images/certificate1.png",
+    image: Certificate,
   },
   {
     id: 2,
     name: "Participation Certification Peter Parker",
-    image: "/images/certificate2.png",
+    image: Certificate2,
   },
   {
     id: 3,
     name: "Certificate of Achievement",
-    image: "/images/certificate3.png",
+    image: Certificate3,
   },
 ];
 
@@ -39,7 +42,7 @@ const Certificates = () => {
               placeholder="Search for your certificate name here"
             />
             <button className="search-button">
-              <i className="fas fa-search"></i>
+              <img className='search-button' src={SearchIcon} alt='Search Icon' />
             </button>
           </div>
 

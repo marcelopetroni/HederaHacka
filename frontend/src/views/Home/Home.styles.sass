@@ -1,8 +1,14 @@
+#root, html, body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  font-family: 'Amiko', sans-serif
+
 .home-page
   display: flex
   flex-direction: row
   font-family: 'Amiko', sans-serif
-
 
 .home-page-container
   display: flex
@@ -28,7 +34,7 @@
         cursor: pointer
         color: black
         transition: background-color 0.3s ease
-      
+
       .icon
         width: 22px
 
@@ -39,7 +45,7 @@
     justify-content: space-between
     padding: 1.5rem
     background-color: #fff
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1) 
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1)
 
     h2
       margin: 0
@@ -50,6 +56,8 @@
       gap: 1rem
 
       .tab-button
+        font-family: 'Amiko', sans-serif
+        font-weight: 500
         background: none
         border: none
         outline: none
@@ -61,11 +69,12 @@
         border-radius: 8px
 
         &:hover
-          background-color: rgba(111, 45, 168, 0.1)  // roxinho claro no hover
+          background-color: rgba(111, 45, 168, 0.1)
           color: #333
+          border-radius: 10px
 
         &.active
-          font-weight: 700       // negrito
+          font-weight: 700
           color: black
           border-radius: 0
           border-bottom: 1px solid

@@ -1,17 +1,25 @@
+
+#root, html, body
+  font-family: 'Amiko', sans-serif
+
 .certificates-page
   display: flex
   font-family: Arial, sans-serif
 
 .certificates-content
+  overflow-y: auto
   width: 100%
+  padding-bottom: 60px
   padding: 2rem
   color: #333
+  height: 100vh
 
 .certificates-header
   display: flex
   justify-content: space-between
   align-items: center
   margin-bottom: 2rem
+  font-family: 'Amiko', sans-serif
 
   h2
     margin: 0
@@ -25,7 +33,8 @@
 
 .certificates-main
   h3
-    font-size: 1.5rem
+    font-size: 2rem
+    font-family: 'Amiko', sans-serif
     font-weight: bold
     margin-bottom: 1rem
 
@@ -33,23 +42,27 @@
     display: flex
     align-items: center
     margin-bottom: 1rem
+    font-family: Arial, sans-serif
+    width: 50%
 
     input
       flex: 1
       padding: 0.75rem
       font-size: 1rem
       border: 1px solid #ddd
-      border-radius: 8px
+      border-radius: 12px
+      background-color: #caafe1
+      &::placeholder
+        color: rgba(51, 51, 51, 0.46)
 
     .search-button
-      background-color: #6F2DA8
-      color: #fff
-      border: none
-      border-radius: 8px
-      padding: 0.75rem
-      margin-left: 0.5rem
+      width: 22px
+      height: 22px
+      padding: 0.2rem
+      margin-left: 0.2rem
+      margin-bottom: 12px
+      background-color: transparent
       cursor: pointer
-      font-size: 1rem
 
   .filter-buttons
     display: flex
@@ -57,9 +70,9 @@
     margin-bottom: 1.5rem
 
     button
+      font-family: 'Amiko', sans-serif
       background-color: #f9f9f9
       border: none
-      border-radius: 8px
       padding: 0.75rem 1rem
       cursor: pointer
       font-size: 1rem
@@ -69,8 +82,9 @@
         background-color: #e6e6e6
 
       &.active
-        background-color: #6F2DA8
-        color: #fff
+        background-color: transparent
+        color: black
+        border-bottom: 1px solid
 
   .certificates-list
     display: flex
@@ -79,14 +93,10 @@
 
     .certificate-card
       width: 250px
-      background-color: #fff
+      background-color: transparent
       border-radius: 12px
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
       overflow: hidden
       transition: box-shadow 0.3s ease
-
-      &:hover
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2)
 
       .certificate-image
         width: 100%
@@ -104,6 +114,7 @@
           padding: 0.5rem
           font-size: 0.9rem
           border-radius: 8px
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
           cursor: pointer
           border: none
 
@@ -111,6 +122,8 @@
             background-color: #6F2DA8
             color: #fff
             margin-right: 0.5rem
+            &:hover
+              background-color: #5A2386
 
           &.mint-button
             background-color: #e6e6e6
