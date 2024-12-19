@@ -1,7 +1,15 @@
 import React from 'react';
 import './Competing.styles.sass';
 
+import { useNavigate } from 'react-router-dom';
+
 const Competing = () => {
+
+  const navigate = useNavigate();
+  const handleEvents = () => {
+    navigate('/event');
+  }
+
   const events = [
     {
       id: 1,
@@ -49,9 +57,9 @@ const Competing = () => {
               </p>
             </div>
             <div className="card-action">
-              <a href='/event'>
-                <button className="view-button">View</button>
-              </a>
+            
+              <button className="view-button" onClick={handleEvents}>View</button>
+      
             </div>
           </div>
         ))}
