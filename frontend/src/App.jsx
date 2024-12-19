@@ -5,6 +5,8 @@ import Certificates from './views/Certificates';
 import Achievements from './views/Achievements/Achievements';
 import Wallet from './views/Wallet/Wallet';
 import Event from './views/Event/Event';
+import NewEvent from './views/NewEvent/NewEvent'
+import TeenHackathon from './views/TeenHackathon/TeenHackathon';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/new-event" element={<NewEvent />} />
+        <Route path="/teen-hackathon" element={<TeenHackathon />} />
       </Routes>
     </Router>
   );
