@@ -7,7 +7,9 @@ const Achievements = () => {
   return (
     <div className='achievements-page'>
       <Sidebar />
-      <div className='achievements-content'>Achievements</div>
+      <div className='achievements-content'>
+        <img src="../images/Oops.png" />
+      </div>
     </div>
     
   )
