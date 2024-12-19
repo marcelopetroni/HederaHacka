@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import './TeenHackathon.styles.sass';
 
+import { useNavigate } from 'react-router-dom';
+
 import Sidebar from "../../components/Sidebar";
 import ArrowDown from '../../assets/ArrowDown.svg';
 import ArrowLeft from '../../assets/ArrowLeft.svg';
 
-// Importação dos componentes das abas
 import Dashboard from '../../components/Dashboard';
 import ParticipantsAndProjects from '../../components/ParticipantsAndProjects';
 import Prizes from '../../components/Prizes';
 import EventSettings from '../../components/EventSettings';
 
 const TeenHackathon = () => {
+
+  const navigate = useNavigate();
+    const handleReturn = () => {
+      navigate('/home');
+    }
+
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const renderContent = () => {
@@ -43,7 +50,7 @@ const TeenHackathon = () => {
         </div> 
 
         {/* Imagem do evento */}
-        <a className="return-button" href="/home">
+        <a className="return-button" onClick={handleReturn}>
           <img src={ArrowLeft} />
           <p>Return</p>
         </a>

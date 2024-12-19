@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import './NewEvent.styles.sass';
 
+import { useNavigate } from 'react-router-dom';
+
 import Sidebar from "../../components/Sidebar";
 import ArrowDown from '../../assets/ArrowDown.svg';
 import ArrowLeft from '../../assets/ArrowLeft.svg';
 import CalendarIcon from "../../assets/CalendarIcon.svg";
 
 const NewEvent = () => {
+
+  const navigate = useNavigate();
+    const handleReturn = () => {
+      navigate('/home');
+    }
 
   return (
     <div className='new-event-page'>
@@ -20,7 +27,7 @@ const NewEvent = () => {
           </div>
         </div> 
 
-        <a className="return-button" href="/home">
+        <a className="return-button" onClick={handleReturn}>
           <img src={ArrowLeft} />
           <p>Return</p>
         </a>
@@ -28,7 +35,6 @@ const NewEvent = () => {
         <div className="create-event-container">
             <h2 className="title">Create New Event</h2>
 
-            {/* Upload da Imagem */}
             <div className="upload-image">
                 <div className="upload-placeholder">
                 <span className="plus-icon">+</span>
@@ -36,7 +42,6 @@ const NewEvent = () => {
                 </div>
             </div>
 
-            {/* Inputs: Nome e Data */}
             <div className="event-info">
                 <input type="text" placeholder="Enter event name" className="input-text" />
                 <div className="event-date">
@@ -45,10 +50,8 @@ const NewEvent = () => {
                 </div>
             </div>
 
-            {/* Descrição */}
             <textarea placeholder="Briefly describe your event" className="textarea"></textarea>
 
-            {/* Filtros */}
             <div className="filters">
               <div className="filter-container">
                 <strong>Filters:</strong>
@@ -73,7 +76,6 @@ const NewEvent = () => {
                 </p>
                 </div>
                 </div>
-                {/* Upload Guidelines */}
               <div className="upload-guidelines">
                   <div className="upload-placeholder">
                   <span className="upload-icon">⬆</span>
@@ -82,8 +84,6 @@ const NewEvent = () => {
               </div>
             </div>
 
-            
-            {/* Botões */}
             <div className="buttons">
                 <button className="add-section">Add Section</button>
                 <button className="create-event">Create Event</button>
