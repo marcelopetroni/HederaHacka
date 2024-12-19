@@ -17,6 +17,7 @@ import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
 const navigate = useNavigate();
 const [isLogin, setIsLogin] = useState(true)
+const [isChecked, setIsChecked] = useState(false);
 const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -24,6 +25,10 @@ const [formData, setFormData] = useState({
     password: '',
     confirmPassword: '',
 });
+
+const handleCheckboxChange = (event) => {
+	setIsChecked(event.target.checked);
+};
 
 const [loginForm, setLoginForm] = useState({
     email: '',
@@ -92,6 +97,13 @@ const handleLogin = async (event) => {
 	}
 };
 
+const handleScroll = () => {
+	const sectionTwo = document.getElementById('section-two');
+	if (sectionTwo) {
+		sectionTwo.scrollIntoView({ behavior: 'smooth' });
+	}
+};
+
 return (
 	<div className="landing-page">
 	<section className="section-one">
@@ -101,14 +113,14 @@ return (
 			</div>
 			<h1>The Ultimate Global Platform for Competitions and Challenges</h1>
 			<p>Host, join and manage competitions all in one place</p>
-			<button className="explore-button">Explore Events</button>
+			<button className="explore-button" onClick={handleScroll}>Get Started</button>
 		</div>
 		<div className="image-right">
 			<img src={PeopleTalking} alt="Profile"/>
 		</div>
 	</section>
 
-	<section className="section-two">
+	<section className="section-two" id="section-two">
 		<div className="section-two-border"></div>
 		<div className="section-two-content">
 		<div className="section-two-left">
@@ -207,11 +219,16 @@ return (
     				onChange={handleChange}
 				/>
 				<div className="terms-checkbox">
-					<input type="checkbox" id="terms" className='checkbox'/>
+					<input type="checkbox" id="terms" className='checkbox' onChange={handleCheckboxChange}/>
 					<label htmlFor="terms">I agree to the Terms of Service and Privacy Policy.</label>
 				</div>
 				<div className="button-container">
-					<button className="form-button" onClick={handleSubmit}>Sign In</button>
+					<button
+						className={`form-button ${!isChecked ? 'disabled' : ''}`}
+						onClick={handleSubmit}
+						disabled={!isChecked}>
+							Sign Up
+					</button>
 				</div>
 				</>
 			)}
@@ -298,7 +315,7 @@ return (
 			<img src={SphereWhite} alt="Profile" className="landing-image"/>
 			<h1>Join a Global Community of Innovators.</h1>
 			<span>Start hosting, competing, and growing today.</span>
-			<button className="get-started-button">Get Started</button>
+			<button className="get-started-button" onClick={handleScroll}>Get Started</button>
 		</div>
 		<div className="section-six-right">
 			<img src={Drawing} alt="Profile" className="landing-image5"/>
